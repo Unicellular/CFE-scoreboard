@@ -1,6 +1,6 @@
 desc "Compile Haml flies"
 task :slim do
-  system "slim", "--pretty", "src/slim/index.slim", "gh-pages/index.html"
+  system "slimrb", "--pretty", "src/slim/index.slim", "gh-pages/index.html"
 end
 
 desc "Compile CoffeeScript files"
