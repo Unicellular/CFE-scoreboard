@@ -1,19 +1,19 @@
 desc "Compile Haml flies"
-task :haml do
-  system "haml", "src/htm/index.haml", "gh-pages/index.html"
+task :slim do
+  system "slim", "--pretty", "src/slim/index.slim", "gh-pages/index.html"
 end
 
 desc "Compile CoffeeScript files"
 task :coffee do
   system "coffee", "--compile", "--output", "gh-pages/javascript",
-    "src/javascript/all.coffee"
+    "src/coffee/all.coffee"
 end
 
 desc "Compile SASS files"
 task :sass do
   system "compass", "compile", "--quiet",
-    "--sass-dir", "src/stylesheet", "--css-dir", "gh-pages/stylesheet"
+    "--sass-dir", "src/sass", "--css-dir", "gh-pages/stylesheet"
 end
 
 desc "Build ALL"
-multitask :default => ["haml", "coffee", "sass"]
+multitask :default => ["slim", "coffee", "sass"]

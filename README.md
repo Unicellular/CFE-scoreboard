@@ -8,7 +8,7 @@ Build
 =====
 ### Prerequisites
 * Rake
-* Haml
+* Slim
 * CoffeeScript
 * Compass
 
