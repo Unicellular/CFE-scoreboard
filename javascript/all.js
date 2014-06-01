@@ -4,8 +4,26 @@
 
   j11 = jQuery.noConflict(true);
 
-  j11.blockUI.defaults.css = {
-    cursor: 'auto'
+  j11.fn._position = j11.fn.position;
+
+  j11.fn.position = function(ofobj, vertical) {
+    var base_offset, j11ofobj, self;
+    self = j11(this);
+    if (arguments.length === 0) {
+      return self._position();
+    } else {
+      j11ofobj = j11(ofobj);
+    }
+    base_offset = j11ofobj.offset();
+    base_offset.left += j11ofobj.outerWidth() / 2;
+    base_offset.left -= self.outerWidth() / 2;
+    if (vertical === 'top') {
+      base_offset.top += j11ofobj.outerHeight() / 20;
+    } else {
+      base_offset.top += j11ofobj.outerHeight() / 2;
+      base_offset.top -= self.outerHeight() / 2;
+    }
+    return self.css(base_offset);
   };
 
   hp_point = [250, 250];
@@ -28,15 +46,15 @@
     'fire': '火'
   };
 
-  calcu = j11('.calcu');
+  calcu = j11('#calcu .modal-content');
 
-  select_career = j11('#select_career');
+  select_career = j11('#select_career .modal-content');
 
-  select_attr = j11('#select_attr');
+  select_attr = j11('#select_attr .modal-content');
 
-  point = j11('#point');
+  point = j11('#point .modal-content');
 
-  menu = j11('#menu');
+  menu = j11('#menu .modal-content');
 
   initialize = function() {};
 
@@ -60,54 +78,42 @@
 
   pop_widget = function(wid) {
     return function(e) {
-      var self;
+      var modal, self;
       target = self = j11(this);
-      self.css('z-index', 1011);
-      wid.css('opacity', 0);
-      return j11.blockUI({
-        message: wid,
-        onOverlayClick: function() {
-          j11.unblockUI();
-          target = null;
-          return self.css('z-index', 0);
-        },
-        onBlock: function() {
-          if (wid.hasClass('calcu')) {
-            wid.removeClass('for-hp').removeClass('for-sp');
-            if (self.hasClass('hp')) {
-              wid.addClass('for-hp');
-            } else if (self.hasClass('sp')) {
-              wid.addClass('for-sp');
-            }
+      modal = wid.parent();
+      self.css('z-index', 9999);
+      modal.one('show.bs.modal', function() {
+        if (wid.is(calcu)) {
+          wid.removeClass('for-hp').removeClass('for-sp');
+          if (self.hasClass('hp')) {
+            wid.addClass('for-hp');
+          } else if (self.hasClass('sp')) {
+            wid.addClass('for-sp');
           }
-          if (self.hasClass('pop-mid')) {
-            wid.removeClass('for-star').removeClass('for-env').removeClass('for-pet');
-            if (self.hasClass('star')) {
-              wid.addClass('for-star');
-            } else if (self.hasClass('env')) {
-              target = env;
-              wid.addClass('for-env');
-            } else if (self.hasClass('pet')) {
-              wid.addClass('for-pet');
-            }
-            wid.parent().position({
-              my: 'top',
-              at: 'top+5%',
-              of: j11('.blockOverlay')
-            });
-          } else if (wid.is(point)) {
-            wid.height(self.outerHeight() + wid.children().outerHeight() * 2);
-            wid.parent().position({
-              of: self
-            });
-          } else {
-            wid.parent().position({
-              of: opposite(self)
-            });
+        }
+        if (self.hasClass('pop-mid')) {
+          wid.removeClass('for-star').removeClass('for-env').removeClass('for-pet');
+          if (self.hasClass('star')) {
+            wid.addClass('for-star');
+          } else if (self.hasClass('env')) {
+            target = env;
+            wid.addClass('for-env');
+          } else if (self.hasClass('pet')) {
+            wid.addClass('for-pet');
           }
-          return wid.css('opacity', 1);
+          return wid.position(j11('body'), 'top');
+        } else if (wid.is(point)) {
+          wid.height(self.outerHeight() + wid.children().outerHeight() * 2);
+          return wid.position(self);
+        } else {
+          return wid.position(opposite(self));
         }
       });
+      modal.one('hide.bs.modal', function() {
+        target = null;
+        return self.css('z-index', 0);
+      });
+      return modal.modal('toggle');
     };
   };
 
