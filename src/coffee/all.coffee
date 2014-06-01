@@ -1,5 +1,21 @@
 j11 = jQuery.noConflict true
-j11.blockUI.defaults.css = cursor: 'auto'
+
+j11.fn._position = j11.fn.position
+j11.fn.position = ( ofobj, vertical ) ->
+    self = j11 @
+    if arguments.length == 0
+        return self._position()
+    else
+        j11ofobj = j11(ofobj)
+    base_offset = j11ofobj.offset()
+    base_offset.left += j11ofobj.outerWidth() / 2
+    base_offset.left -= self.outerWidth() / 2
+    if vertical == 'top'
+        base_offset.top += j11ofobj.outerHeight() / 20
+    else
+        base_offset.top += j11ofobj.outerHeight() / 2
+        base_offset.top -= self.outerHeight() / 2
+    self.css( base_offset )
 
 # control function
 
@@ -17,11 +33,11 @@ translate =
     'earth': '土'
     'water': '水'
     'fire': '火'
-calcu = j11 '.calcu'
-select_career = j11 '#select_career'
-select_attr = j11 '#select_attr'
-point = j11 '#point'
-menu = j11 '#menu'
+calcu = j11 '#calcu .modal-content'
+select_career = j11 '#select_career .modal-content'
+select_attr = j11 '#select_attr .modal-content'
+point = j11 '#point .modal-content'
+menu = j11 '#menu .modal-content'
 
 initialize = ->
 
@@ -34,45 +50,36 @@ sameside = (child) ->
 target = null
 
 pop_widget = (wid) -> (e) ->
-    # TODO: set widget position
     target = self = j11 @
-    self.css('z-index', 1011)
-    wid.css('opacity', 0)
-    j11.blockUI
-        message: wid
-        onOverlayClick: ->
-            j11.unblockUI()
-            target = null
-            self.css('z-index', 0)
-        onBlock: ->
-            if wid.hasClass 'calcu'
-                wid.removeClass('for-hp').removeClass 'for-sp'
-                if self.hasClass 'hp'
-                    wid.addClass 'for-hp'
-                else if self.hasClass 'sp'
-                    wid.addClass 'for-sp'
+    modal = wid.parent()
+    self.css('z-index', 9999)
+    modal.one 'show.bs.modal', ->
+        if wid.is calcu
+            wid.removeClass('for-hp').removeClass 'for-sp'
+            if self.hasClass 'hp'
+                wid.addClass 'for-hp'
+            else if self.hasClass 'sp'
+                wid.addClass 'for-sp'
 
-            if self.hasClass 'pop-mid'
-                wid.removeClass('for-star').removeClass('for-env').removeClass 'for-pet'
-                if self.hasClass 'star'
-                    wid.addClass 'for-star'
-                else if self.hasClass 'env'
-                    target = env
-                    wid.addClass 'for-env'
-                else if self.hasClass 'pet'
-                    wid.addClass 'for-pet'
-                wid.parent().position
-                    my: 'top'
-                    at: 'top+5%'
-                    of: j11 '.blockOverlay'
-            else if wid.is point
-                wid.height(self.outerHeight() + wid.children().outerHeight() * 2)
-                wid.parent().position
-                    of: self
-            else
-                wid.parent().position
-                    of: opposite(self)
-            wid.css('opacity', 1)
+        if self.hasClass 'pop-mid'
+            wid.removeClass('for-star').removeClass('for-env').removeClass 'for-pet'
+            if self.hasClass 'star'
+                wid.addClass 'for-star'
+            else if self.hasClass 'env'
+                target = env
+                wid.addClass 'for-env'
+            else if self.hasClass 'pet'
+                wid.addClass 'for-pet'
+            wid.position j11('body'), 'top'
+        else if wid.is point
+            wid.height(self.outerHeight() + wid.children().outerHeight() * 2)
+            wid.position self
+        else
+          wid.position opposite(self)
+    modal.one 'hide.bs.modal', ->
+        target = null
+        self.css('z-index', 0)
+    modal.modal('toggle')
 
 hp = (j11 '.hp').click pop_widget calcu
 sp = (j11 '.sp').click pop_widget calcu
