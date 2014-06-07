@@ -17,6 +17,20 @@ j11.fn.position = ( ofobj, vertical ) ->
         base_offset.top -= self.outerHeight() / 2
     self.css( base_offset )
 
+j11.fn.hasOneOfClasses = ( classes ) ->
+    self = j11 @
+    result = false
+    switch j11.type(classes)
+        when "string"
+            self.hasClass classes
+        when "array"
+            j11.each classes, (i, v) ->
+                if self.hasClass(v)
+                    result = true
+            return result ? false
+        else
+            false
+
 # control function
 
 bane =
@@ -31,6 +45,7 @@ translate =
     'earth': '土'
     'water': '水'
     'fire': '火'
+cfe = ['metal', 'wood', 'earth', 'water', 'fire']
 calcu = j11 '#calcu .modal-content'
 select_career = j11 '#select_career .modal-content'
 select_attr = j11 '#select_attr .modal-content'
@@ -46,7 +61,10 @@ sameside = (child) ->
 target = null
 
 pop_widget = (wid) -> (e) ->
-    target = self = j11 @
+    self = j11 @
+    if self.hasClass('pet-num') && !self.siblings('.pet').children().hasOneOfClasses(cfe)
+        return false
+    target = self
     modal = wid.parent()
     self.css('z-index', 9999)
     modal.one 'show.bs.modal', ->
