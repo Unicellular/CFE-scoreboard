@@ -121,17 +121,16 @@ spawnstar = (div, attr) ->
     else
         false
 
+# calculator functionality
 output = j11 '.output', calcu
 operator =
-    '+': (a, b) -> Number(a) + Number b
+    '+': (a, b) -> a + b
     '-': (a, b) -> a - b
     '*': (a, b) -> a * b
     '/': (a, b) -> a // b
-    '**': (a, b) -> a ** b
 calculate = (s) ->
-    m = s.match(/\d+|[\+\*\/-]+/g) ? []
-    if m.length is 3
-        operator[m[1]] m[0], m[2]
+    if /^([\-\+]?\d+)([\+\*\/\-])([\-\+]?\d+)$/.test s
+        operator[RegExp.$2] Number(RegExp.$1), Number(RegExp.$3)
     else if s
         Number s
     else
@@ -152,6 +151,7 @@ calculate = (s) ->
 
 (j11 '.btn-danger', calcu).click (e) -> output.text target.text()
 (j11 '.btn-default', calcu).click (e) -> output.text output.text()[...-1]
+# calculator functionality end
 
 j11('.meteor > div').click ->
     self = j11(@)
