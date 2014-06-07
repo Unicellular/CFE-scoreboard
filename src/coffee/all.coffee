@@ -63,6 +63,7 @@ target = null
 show_widget = (wid) -> (e) ->
     self = j11 @
     if self.hasClass('pet-num') && !self.siblings('.pet').children().hasOneOfClasses(cfe)
+        self.one('click', show_widget(wid))
         return false
     target = self
     modal = wid.parent()
