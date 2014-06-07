@@ -17,6 +17,20 @@ j11.fn.position = ( ofobj, vertical ) ->
         base_offset.top -= self.outerHeight() / 2
     self.css( base_offset )
 
+j11.fn.hasOneOfClasses = ( classes ) ->
+    self = j11 @
+    result = false
+    switch j11.type(classes)
+        when "string"
+            self.hasClass classes
+        when "array"
+            j11.each classes, (i, v) ->
+                if self.hasClass(v)
+                    result = true
+            return result ? false
+        else
+            false
+
 # control function
 
 bane =
@@ -31,6 +45,7 @@ translate =
     'earth': '土'
     'water': '水'
     'fire': '火'
+cfe = ['metal', 'wood', 'earth', 'water', 'fire']
 calcu = j11 '#calcu .modal-content'
 select_career = j11 '#select_career .modal-content'
 select_attr = j11 '#select_attr .modal-content'
@@ -45,49 +60,59 @@ sameside = (child) ->
 
 target = null
 
-pop_widget = (wid) -> (e) ->
-    target = self = j11 @
+show_widget = (wid) -> (e) ->
+    self = j11 @
+    if self.hasClass('pet-num') && !self.siblings('.pet').children().hasOneOfClasses(cfe)
+        return false
+    target = self
     modal = wid.parent()
-    self.css('z-index', 9999)
-    modal.one 'show.bs.modal', ->
-        if wid.is calcu
-            wid.removeClass 'for-hp for-sp'
-            output.text target.text()
-            if self.hasClass 'hp'
-                wid.addClass 'for-hp'
-            else if self.hasClass 'sp'
-                wid.addClass 'for-sp'
 
-        if self.hasClass 'pop-mid'
-            wid.removeClass 'for-star for-env for-pet'
-            if self.hasClass 'star'
-                wid.addClass 'for-star'
-            else if self.hasClass 'env'
-                target = env
-                wid.addClass 'for-env'
-            else if self.hasClass 'pet'
-                wid.addClass 'for-pet'
-            wid.position j11('body'), 'top'
-        else if wid.is point
-            wid.height(self.outerHeight() + wid.children().outerHeight() * 2)
-            wid.position self
-        else
-          wid.position opposite(self)
-    modal.one 'hide.bs.modal', ->
+    self.css('z-index', 9999)
+    if wid.is calcu
+        wid.removeClass 'for-hp for-sp'
+        output.text target.text()
+        if self.hasClass 'hp'
+            wid.addClass 'for-hp'
+        else if self.hasClass 'sp'
+            wid.addClass 'for-sp'
+
+    if self.hasClass 'pop-mid'
+        wid.removeClass 'for-star for-env for-pet'
+        if self.hasClass 'star'
+            wid.addClass 'for-star'
+        else if self.hasClass 'env'
+            target = env
+            wid.addClass 'for-env'
+        else if self.hasClass 'pet'
+            wid.addClass 'for-pet'
+        wid.position j11('body'), 'top'
+    else if wid.is point
+        wid.height(self.outerHeight() + wid.children().outerHeight() * 2)
+        wid.position self
+    else
+        wid.position opposite(self)
+    modal.modal('show')
+    modal.one 'hidden.bs.modal', ->
         target = null
         self.css('z-index', 0)
-    modal.modal('toggle')
+        self.one('click', show_widget(wid))
 
-hp = (j11 '.hp').click pop_widget calcu
-sp = (j11 '.sp').click pop_widget calcu
-profession = (j11 '.profession').click pop_widget select_career
-pet = (j11 '.pet').click pop_widget select_attr
-petnum = (j11 '.pet-num').click pop_widget point
-dark = (j11 '.dark').click pop_widget point
-star = (j11 '.star').click pop_widget select_attr
-env = (j11 '#env').click pop_widget select_attr
-envtxt = (j11 '#envtxt').click pop_widget select_attr
-tools = (j11 '#tools').click pop_widget menu
+    self.one('click', hide_widget(wid))
+
+hide_widget = (wid) -> (e) ->
+    modal = wid.parent()
+    modal.modal('hide')
+
+hp = (j11 '.hp').one('click', show_widget(calcu) )
+sp = (j11 '.sp').one('click', show_widget(calcu) )
+profession = (j11 '.profession').one('click', show_widget(select_career) )
+pet = (j11 '.pet').one('click', show_widget(select_attr) )
+petnum = (j11 '.pet-num').one('click', show_widget(point) )
+dark = (j11 '.dark').one('click', show_widget(point) )
+star = (j11 '.star').one('click', show_widget(select_attr) )
+env = (j11 '#env').one('click', show_widget(select_attr) )
+envtxt = (j11 '#envtxt').one('click', show_widget(select_attr) )
+tools = (j11 '#tools').one('click', show_widget(menu) )
 
 change_attr = (obj, attr) ->
     obj.removeClass('metal wood water fire earth').addClass attr
