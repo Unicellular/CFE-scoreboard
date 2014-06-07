@@ -51,7 +51,7 @@ pop_widget = (wid) -> (e) ->
     self.css('z-index', 9999)
     modal.one 'show.bs.modal', ->
         if wid.is calcu
-            wid.removeClass 'for-hp', 'for-sp'
+            wid.removeClass 'for-hp for-sp'
             output.text target.text()
             if self.hasClass 'hp'
                 wid.addClass 'for-hp'
@@ -59,7 +59,7 @@ pop_widget = (wid) -> (e) ->
                 wid.addClass 'for-sp'
 
         if self.hasClass 'pop-mid'
-            wid.removeClass('for-star').removeClass('for-env').removeClass 'for-pet'
+            wid.removeClass 'for-star for-env for-pet'
             if self.hasClass 'star'
                 wid.addClass 'for-star'
             else if self.hasClass 'env'
