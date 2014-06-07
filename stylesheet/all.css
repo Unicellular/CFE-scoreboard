@@ -89,32 +89,34 @@ body {
   height: 12%;
   background-color: #ffe599;
   font-size: 5vh;
+  overflow: hidden;
+  white-space: nowrap;
   float: left;
   border: 3px solid black;
   margin-top: -3px;
 }
-/* line 100, ../../src/sass/all.sass */
+/* line 102, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info {
   width: 50%;
   height: 90%;
-  padding: 3vh;
+  padding: 3vh 1vh;
   background-color: #fff2cc;
   font-size: 6vh;
   float: left;
   border: 3px solid black;
   margin-top: -3px;
 }
-/* line 109, ../../src/sass/all.sass */
+/* line 111, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .profession {
   cursor: pointer;
   width: 100%;
-  height: 8vh;
+  margin-bottom: 2vh;
 }
-/* line 113, ../../src/sass/all.sass */
+/* line 115, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .profession:active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-/* line 115, ../../src/sass/all.sass */
+/* line 117, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .pet, #half_left .contain .contain2 .contain3 .info .pet-num {
   height: 10vh;
   font-size: 6vh;
@@ -124,60 +126,61 @@ body {
   width: 10vh;
   border: 3px solid;
 }
-/* line 123, ../../src/sass/all.sass */
+/* line 125, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .pet div, #half_left .contain .contain2 .contain3 .info .pet-num div {
   width: 100%;
   height: 100%;
 }
-/* line 126, ../../src/sass/all.sass */
+/* line 128, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .pet .metal, #half_left .contain .contain2 .contain3 .info .pet-num .metal {
   background-color: white;
 }
-/* line 128, ../../src/sass/all.sass */
+/* line 130, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .pet .wood, #half_left .contain .contain2 .contain3 .info .pet-num .wood {
   background-color: green;
 }
-/* line 130, ../../src/sass/all.sass */
+/* line 132, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .pet .water, #half_left .contain .contain2 .contain3 .info .pet-num .water {
   background-color: blue;
 }
-/* line 132, ../../src/sass/all.sass */
+/* line 134, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .pet .fire, #half_left .contain .contain2 .contain3 .info .pet-num .fire {
   background-color: red;
 }
-/* line 134, ../../src/sass/all.sass */
+/* line 136, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .pet .earth, #half_left .contain .contain2 .contain3 .info .pet-num .earth {
   background-color: yellow;
 }
-/* line 136, ../../src/sass/all.sass */
+/* line 138, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor {
   margin-top: 10vh;
 }
-/* line 138, ../../src/sass/all.sass */
+/* line 140, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor > div {
-  width: 6vh;
+  width: 7vh;
   display: inline-block;
   border: 1px dashed black;
   cursor: pointer;
+  padding-left: 0.5vh;
 }
-/* line 143, ../../src/sass/all.sass */
+/* line 146, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor > div div {
   opacity: 0.5;
 }
-/* line 145, ../../src/sass/all.sass */
+/* line 148, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor > div.spawn {
   border: 1px solid black;
 }
-/* line 147, ../../src/sass/all.sass */
+/* line 150, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .metal {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid ghostwhite;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid ghostwhite;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -186,14 +189,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .metal:before {
-  border-bottom: 2vh solid ghostwhite;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid ghostwhite;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -206,13 +209,13 @@ body {
 #half_left .contain .contain2 .contain3 .info .meteor .metal:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid ghostwhite;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid ghostwhite;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -220,16 +223,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 149, ../../src/sass/all.sass */
+/* line 152, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .wood {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid green;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid green;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -238,14 +241,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .wood:before {
-  border-bottom: 2vh solid green;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid green;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -258,13 +261,13 @@ body {
 #half_left .contain .contain2 .contain3 .info .meteor .wood:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid green;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid green;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -272,16 +275,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 151, ../../src/sass/all.sass */
+/* line 154, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .water {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid blue;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid blue;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -290,14 +293,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .water:before {
-  border-bottom: 2vh solid blue;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid blue;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -310,13 +313,13 @@ body {
 #half_left .contain .contain2 .contain3 .info .meteor .water:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid blue;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid blue;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -324,16 +327,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 153, ../../src/sass/all.sass */
+/* line 156, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .fire {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid red;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid red;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -342,14 +345,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .fire:before {
-  border-bottom: 2vh solid red;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid red;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -362,13 +365,13 @@ body {
 #half_left .contain .contain2 .contain3 .info .meteor .fire:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid red;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid red;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -376,16 +379,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 155, ../../src/sass/all.sass */
+/* line 158, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .earth {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid yellow;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid yellow;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -394,14 +397,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_left .contain .contain2 .contain3 .info .meteor .earth:before {
-  border-bottom: 2vh solid yellow;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid yellow;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -414,13 +417,13 @@ body {
 #half_left .contain .contain2 .contain3 .info .meteor .earth:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid yellow;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid yellow;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -428,7 +431,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 157, ../../src/sass/all.sass */
+/* line 160, ../../src/sass/all.sass */
 #half_left .star, #half_left .dark {
   width: 15vh;
   height: 15vh;
@@ -438,7 +441,7 @@ body {
   left: 0;
   border: 3px solid black;
 }
-/* line 165, ../../src/sass/all.sass */
+/* line 168, ../../src/sass/all.sass */
 #half_left .star .metal, #half_left .dark .metal {
   position: relative;
   width: 0px;
@@ -490,7 +493,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 167, ../../src/sass/all.sass */
+/* line 170, ../../src/sass/all.sass */
 #half_left .star .wood, #half_left .dark .wood {
   position: relative;
   width: 0px;
@@ -542,7 +545,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 169, ../../src/sass/all.sass */
+/* line 172, ../../src/sass/all.sass */
 #half_left .star .water, #half_left .dark .water {
   position: relative;
   width: 0px;
@@ -594,7 +597,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 171, ../../src/sass/all.sass */
+/* line 174, ../../src/sass/all.sass */
 #half_left .star .fire, #half_left .dark .fire {
   position: relative;
   width: 0px;
@@ -646,7 +649,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 173, ../../src/sass/all.sass */
+/* line 176, ../../src/sass/all.sass */
 #half_left .star .earth, #half_left .dark .earth {
   position: relative;
   width: 0px;
@@ -698,7 +701,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 175, ../../src/sass/all.sass */
+/* line 178, ../../src/sass/all.sass */
 #half_left .dark {
   top: 75vh;
   background-color: #434343;
@@ -759,32 +762,34 @@ body {
   height: 12%;
   background-color: #ffe599;
   font-size: 5vh;
+  overflow: hidden;
+  white-space: nowrap;
   float: right;
   border: 3px solid black;
   margin-top: -3px;
 }
-/* line 100, ../../src/sass/all.sass */
+/* line 102, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info {
   width: 50%;
   height: 90%;
-  padding: 3vh;
+  padding: 3vh 1vh;
   background-color: #fff2cc;
   font-size: 6vh;
   float: right;
   border: 3px solid black;
   margin-top: -3px;
 }
-/* line 109, ../../src/sass/all.sass */
+/* line 111, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .profession {
   cursor: pointer;
   width: 100%;
-  height: 8vh;
+  margin-bottom: 2vh;
 }
-/* line 113, ../../src/sass/all.sass */
+/* line 115, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .profession:active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-/* line 115, ../../src/sass/all.sass */
+/* line 117, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .pet, #half_right .contain .contain2 .contain3 .info .pet-num {
   height: 10vh;
   font-size: 6vh;
@@ -794,60 +799,61 @@ body {
   width: 10vh;
   border: 3px solid;
 }
-/* line 123, ../../src/sass/all.sass */
+/* line 125, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .pet div, #half_right .contain .contain2 .contain3 .info .pet-num div {
   width: 100%;
   height: 100%;
 }
-/* line 126, ../../src/sass/all.sass */
+/* line 128, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .pet .metal, #half_right .contain .contain2 .contain3 .info .pet-num .metal {
   background-color: white;
 }
-/* line 128, ../../src/sass/all.sass */
+/* line 130, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .pet .wood, #half_right .contain .contain2 .contain3 .info .pet-num .wood {
   background-color: green;
 }
-/* line 130, ../../src/sass/all.sass */
+/* line 132, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .pet .water, #half_right .contain .contain2 .contain3 .info .pet-num .water {
   background-color: blue;
 }
-/* line 132, ../../src/sass/all.sass */
+/* line 134, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .pet .fire, #half_right .contain .contain2 .contain3 .info .pet-num .fire {
   background-color: red;
 }
-/* line 134, ../../src/sass/all.sass */
+/* line 136, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .pet .earth, #half_right .contain .contain2 .contain3 .info .pet-num .earth {
   background-color: yellow;
 }
-/* line 136, ../../src/sass/all.sass */
+/* line 138, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor {
   margin-top: 10vh;
 }
-/* line 138, ../../src/sass/all.sass */
+/* line 140, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor > div {
-  width: 6vh;
+  width: 7vh;
   display: inline-block;
   border: 1px dashed black;
   cursor: pointer;
+  padding-left: 0.5vh;
 }
-/* line 143, ../../src/sass/all.sass */
+/* line 146, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor > div div {
   opacity: 0.5;
 }
-/* line 145, ../../src/sass/all.sass */
+/* line 148, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor > div.spawn {
   border: 1px solid black;
 }
-/* line 147, ../../src/sass/all.sass */
+/* line 150, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .metal {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid ghostwhite;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid ghostwhite;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -856,14 +862,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .metal:before {
-  border-bottom: 2vh solid ghostwhite;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid ghostwhite;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -876,13 +882,13 @@ body {
 #half_right .contain .contain2 .contain3 .info .meteor .metal:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid ghostwhite;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid ghostwhite;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -890,16 +896,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 149, ../../src/sass/all.sass */
+/* line 152, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .wood {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid green;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid green;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -908,14 +914,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .wood:before {
-  border-bottom: 2vh solid green;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid green;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -928,13 +934,13 @@ body {
 #half_right .contain .contain2 .contain3 .info .meteor .wood:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid green;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid green;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -942,16 +948,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 151, ../../src/sass/all.sass */
+/* line 154, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .water {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid blue;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid blue;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -960,14 +966,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .water:before {
-  border-bottom: 2vh solid blue;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid blue;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -980,13 +986,13 @@ body {
 #half_right .contain .contain2 .contain3 .info .meteor .water:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid blue;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid blue;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -994,16 +1000,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 153, ../../src/sass/all.sass */
+/* line 156, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .fire {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid red;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid red;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -1012,14 +1018,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .fire:before {
-  border-bottom: 2vh solid red;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid red;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -1032,13 +1038,13 @@ body {
 #half_right .contain .contain2 .contain3 .info .meteor .fire:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid red;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid red;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -1046,16 +1052,16 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 155, ../../src/sass/all.sass */
+/* line 158, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .earth {
   position: relative;
   width: 0px;
   height: 0px;
-  margin: 1.78571vh 0;
+  margin: 2.14286vh 0;
   padding: 0;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid yellow;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid yellow;
+  border-left: 3vh solid transparent;
   -webkit-transform: rotate(35deg);
   -moz-transform: rotate(35deg);
   -ms-transform: rotate(35deg);
@@ -1064,14 +1070,14 @@ body {
 }
 /* line 22, ../../src/sass/all.sass */
 #half_right .contain .contain2 .contain3 .info .meteor .earth:before {
-  border-bottom: 2vh solid yellow;
-  border-left: 0.75vh solid transparent;
-  border-right: 0.75vh solid transparent;
+  border-bottom: 2.4vh solid yellow;
+  border-left: 0.9vh solid transparent;
+  border-right: 0.9vh solid transparent;
   position: absolute;
   height: 0;
   width: 0;
-  top: -1.25vh;
-  left: -1.625vh;
+  top: -1.5vh;
+  left: -1.95vh;
   display: block;
   content: "";
   -webkit-transform: rotate(-35deg);
@@ -1084,13 +1090,13 @@ body {
 #half_right .contain .contain2 .contain3 .info .meteor .earth:after {
   position: absolute;
   display: block;
-  top: 0.075vh;
-  left: -2.625vh;
+  top: 0.09vh;
+  left: -3.15vh;
   width: 0px;
   height: 0px;
-  border-right: 2.5vh solid transparent;
-  border-bottom: 1.75vh solid yellow;
-  border-left: 2.5vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 2.1vh solid yellow;
+  border-left: 3vh solid transparent;
   content: "";
   -webkit-transform: rotate(-70deg);
   -moz-transform: rotate(-70deg);
@@ -1098,7 +1104,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 157, ../../src/sass/all.sass */
+/* line 160, ../../src/sass/all.sass */
 #half_right .star, #half_right .dark {
   width: 15vh;
   height: 15vh;
@@ -1108,7 +1114,7 @@ body {
   right: 0;
   border: 3px solid black;
 }
-/* line 165, ../../src/sass/all.sass */
+/* line 168, ../../src/sass/all.sass */
 #half_right .star .metal, #half_right .dark .metal {
   position: relative;
   width: 0px;
@@ -1160,7 +1166,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 167, ../../src/sass/all.sass */
+/* line 170, ../../src/sass/all.sass */
 #half_right .star .wood, #half_right .dark .wood {
   position: relative;
   width: 0px;
@@ -1212,7 +1218,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 169, ../../src/sass/all.sass */
+/* line 172, ../../src/sass/all.sass */
 #half_right .star .water, #half_right .dark .water {
   position: relative;
   width: 0px;
@@ -1264,7 +1270,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 171, ../../src/sass/all.sass */
+/* line 174, ../../src/sass/all.sass */
 #half_right .star .fire, #half_right .dark .fire {
   position: relative;
   width: 0px;
@@ -1316,7 +1322,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 173, ../../src/sass/all.sass */
+/* line 176, ../../src/sass/all.sass */
 #half_right .star .earth, #half_right .dark .earth {
   position: relative;
   width: 0px;
@@ -1368,7 +1374,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 175, ../../src/sass/all.sass */
+/* line 178, ../../src/sass/all.sass */
 #half_right .dark {
   top: 75vh;
   background-color: #434343;
@@ -1377,16 +1383,16 @@ body {
   margin-top: -3px;
 }
 
-/* line 186, ../../src/sass/all.sass */
+/* line 189, ../../src/sass/all.sass */
 .hp, .sp, .star, #half_left .dark, #half_right .dark, .dark, .env, #tools {
   cursor: pointer;
 }
-/* line 188, ../../src/sass/all.sass */
+/* line 191, ../../src/sass/all.sass */
 .hp:active, .sp:active, .star:active, #half_left .dark:active, #half_right .dark:active, .dark:active, .env:active, #tools:active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-/* line 192, ../../src/sass/all.sass */
+/* line 195, ../../src/sass/all.sass */
 #env {
   width: 15vh;
   height: 15vh;
@@ -1398,34 +1404,34 @@ body {
   background-color: #b45f06;
   border: 3px solid black;
 }
-/* line 202, ../../src/sass/all.sass */
+/* line 205, ../../src/sass/all.sass */
 #env div {
   width: 80%;
   height: 80%;
   margin: 10% auto;
 }
-/* line 206, ../../src/sass/all.sass */
+/* line 209, ../../src/sass/all.sass */
 #env .metal {
   background-color: white;
 }
-/* line 208, ../../src/sass/all.sass */
+/* line 211, ../../src/sass/all.sass */
 #env .wood {
   background-color: green;
 }
-/* line 210, ../../src/sass/all.sass */
+/* line 213, ../../src/sass/all.sass */
 #env .water {
   background-color: blue;
 }
-/* line 212, ../../src/sass/all.sass */
+/* line 215, ../../src/sass/all.sass */
 #env .fire {
   background-color: red;
 }
-/* line 214, ../../src/sass/all.sass */
+/* line 217, ../../src/sass/all.sass */
 #env .earth {
   background-color: yellow;
 }
 
-/* line 216, ../../src/sass/all.sass */
+/* line 219, ../../src/sass/all.sass */
 #envtxt {
   width: 9vh;
   height: 9vh;
@@ -1439,7 +1445,7 @@ body {
   border: 3px solid black;
 }
 
-/* line 227, ../../src/sass/all.sass */
+/* line 230, ../../src/sass/all.sass */
 #tools {
   width: 15vh;
   height: 15vh;
@@ -1451,7 +1457,7 @@ body {
   background-color: #f6b26b;
   border: 3px solid black;
 }
-/* line 237, ../../src/sass/all.sass */
+/* line 240, ../../src/sass/all.sass */
 #tools .gear {
   width: 9.78261vh;
   height: 9.78261vh;
@@ -1461,7 +1467,7 @@ body {
   border-radius: 50%;
   box-shadow: 0px -1px 0px 0px #888888, 0px 1px 0px 0px black;
 }
-/* line 247, ../../src/sass/all.sass */
+/* line 250, ../../src/sass/all.sass */
 #tools .gear:after {
   content: "";
   position: absolute;
@@ -1475,7 +1481,7 @@ body {
   margin-left: -2.93478vh;
   box-shadow: 0px 0px 10px white(0.1), inset 0px 0px 10px black(0.1), inset 0px 2px 0px 0px #080808, inset 0px -1px 0px 0px #888888;
 }
-/* line 259, ../../src/sass/all.sass */
+/* line 262, ../../src/sass/all.sass */
 #tools .gear .gear-inner {
   position: relative;
   width: 100%;
@@ -1484,7 +1490,7 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 266, ../../src/sass/all.sass */
+/* line 269, ../../src/sass/all.sass */
 #tools .gear .gear-inner .bar {
   width: 13.5vh;
   height: 2.34783vh;
@@ -1497,7 +1503,7 @@ body {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 278, ../../src/sass/all.sass */
+/* line 281, ../../src/sass/all.sass */
 #tools .gear .gear-inner .bar:nth-child(2) {
   -webkit-transform: rotate(60deg);
   -moz-transform: rotate(60deg);
@@ -1505,7 +1511,7 @@ body {
   -o-transform: rotate(60deg);
   transform: rotate(60deg);
 }
-/* line 280, ../../src/sass/all.sass */
+/* line 283, ../../src/sass/all.sass */
 #tools .gear .gear-inner .bar:nth-child(3) {
   -webkit-transform: rotate(120deg);
   -moz-transform: rotate(120deg);
@@ -1514,78 +1520,78 @@ body {
   transform: rotate(120deg);
 }
 
-/* line 290, ../../src/sass/all.sass */
+/* line 293, ../../src/sass/all.sass */
 .for-hp {
   background-color: #f4cccc;
   width: 45vw;
   height: 85vh;
   padding: 1vh 0;
 }
-/* line 295, ../../src/sass/all.sass */
+/* line 298, ../../src/sass/all.sass */
 .for-hp .row > .btn {
   width: 10vw;
   height: 15vh;
   margin: 0.5vh 0.5vw;
   font-size: 10vh;
 }
-/* line 286, ../../src/sass/all.sass */
+/* line 289, ../../src/sass/all.sass */
 .for-hp .output {
   width: 32.5vw !important;
   border: 3px solid red;
   color: red;
 }
 
-/* line 301, ../../src/sass/all.sass */
+/* line 304, ../../src/sass/all.sass */
 .for-sp {
   background-color: #d0e0e3;
   width: 45vw;
   height: 85vh;
   padding: 1vh 0;
 }
-/* line 306, ../../src/sass/all.sass */
+/* line 309, ../../src/sass/all.sass */
 .for-sp .row > .btn {
   width: 10vw;
   height: 15vh;
   margin: 0.5vh 0.5vw;
   font-size: 10vh;
 }
-/* line 286, ../../src/sass/all.sass */
+/* line 289, ../../src/sass/all.sass */
 .for-sp .output {
   width: 32.5vw !important;
   border: 3px solid blue;
   color: blue;
 }
 
-/* line 313, ../../src/sass/all.sass */
+/* line 316, ../../src/sass/all.sass */
 #select_career .modal-content {
   background-color: #fff2cc;
   width: 45vw;
   height: 85vh;
 }
-/* line 317, ../../src/sass/all.sass */
+/* line 320, ../../src/sass/all.sass */
 #select_career .modal-content .btn {
   width: 30vw;
   height: 8vh;
   margin: 0.7vh;
   font-size: 5vh;
 }
-/* line 322, ../../src/sass/all.sass */
+/* line 325, ../../src/sass/all.sass */
 #select_career .modal-content li {
   width: 30vw;
   height: 8vh;
   font-size: 5vh;
 }
 
-/* line 327, ../../src/sass/all.sass */
+/* line 330, ../../src/sass/all.sass */
 #select_attr .modal-content {
   width: 45vw;
   height: 50vh;
 }
-/* line 330, ../../src/sass/all.sass */
+/* line 333, ../../src/sass/all.sass */
 #select_attr .modal-content.for-star {
   background-color: #fff2cc;
 }
-/* line 332, ../../src/sass/all.sass */
+/* line 335, ../../src/sass/all.sass */
 #select_attr .modal-content.for-star .for-metal {
   position: relative;
   width: 0px;
@@ -1637,7 +1643,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 334, ../../src/sass/all.sass */
+/* line 337, ../../src/sass/all.sass */
 #select_attr .modal-content.for-star .for-wood {
   position: relative;
   width: 0px;
@@ -1689,7 +1695,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 336, ../../src/sass/all.sass */
+/* line 339, ../../src/sass/all.sass */
 #select_attr .modal-content.for-star .for-water {
   position: relative;
   width: 0px;
@@ -1741,7 +1747,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 338, ../../src/sass/all.sass */
+/* line 341, ../../src/sass/all.sass */
 #select_attr .modal-content.for-star .for-fire {
   position: relative;
   width: 0px;
@@ -1793,7 +1799,7 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 340, ../../src/sass/all.sass */
+/* line 343, ../../src/sass/all.sass */
 #select_attr .modal-content.for-star .for-earth {
   position: relative;
   width: 0px;
@@ -1845,74 +1851,74 @@ body {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 342, ../../src/sass/all.sass */
+/* line 345, ../../src/sass/all.sass */
 #select_attr .modal-content.for-env {
   background-color: #fce5cd;
 }
-/* line 344, ../../src/sass/all.sass */
+/* line 347, ../../src/sass/all.sass */
 #select_attr .modal-content.for-env .btn {
   width: 20vh;
   height: 20vh;
   margin: 1.5vh;
 }
-/* line 348, ../../src/sass/all.sass */
+/* line 351, ../../src/sass/all.sass */
 #select_attr .modal-content.for-env .for-metal {
   background-color: white;
 }
-/* line 350, ../../src/sass/all.sass */
+/* line 353, ../../src/sass/all.sass */
 #select_attr .modal-content.for-env .for-wood {
   background-color: green;
 }
-/* line 352, ../../src/sass/all.sass */
+/* line 355, ../../src/sass/all.sass */
 #select_attr .modal-content.for-env .for-water {
   background-color: blue;
 }
-/* line 354, ../../src/sass/all.sass */
+/* line 357, ../../src/sass/all.sass */
 #select_attr .modal-content.for-env .for-fire {
   background-color: red;
 }
-/* line 356, ../../src/sass/all.sass */
+/* line 359, ../../src/sass/all.sass */
 #select_attr .modal-content.for-env .for-earth {
   background-color: yellow;
 }
-/* line 358, ../../src/sass/all.sass */
+/* line 361, ../../src/sass/all.sass */
 #select_attr .modal-content.for-pet {
   background-color: #fce5cd;
 }
-/* line 360, ../../src/sass/all.sass */
+/* line 363, ../../src/sass/all.sass */
 #select_attr .modal-content.for-pet .btn {
   border-radius: 10%;
   width: 20vh;
   height: 20vh;
   margin: 1.5vh;
 }
-/* line 365, ../../src/sass/all.sass */
+/* line 368, ../../src/sass/all.sass */
 #select_attr .modal-content.for-pet .for-metal {
   background-color: white;
 }
-/* line 367, ../../src/sass/all.sass */
+/* line 370, ../../src/sass/all.sass */
 #select_attr .modal-content.for-pet .for-wood {
   background-color: green;
 }
-/* line 369, ../../src/sass/all.sass */
+/* line 372, ../../src/sass/all.sass */
 #select_attr .modal-content.for-pet .for-water {
   background-color: blue;
 }
-/* line 371, ../../src/sass/all.sass */
+/* line 374, ../../src/sass/all.sass */
 #select_attr .modal-content.for-pet .for-fire {
   background-color: red;
 }
-/* line 373, ../../src/sass/all.sass */
+/* line 376, ../../src/sass/all.sass */
 #select_attr .modal-content.for-pet .for-earth {
   background-color: yellow;
 }
 
-/* line 376, ../../src/sass/all.sass */
+/* line 379, ../../src/sass/all.sass */
 #point .modal-content {
   background-color: transparent;
   width: 10vh;
 }
-/* line 379, ../../src/sass/all.sass */
+/* line 382, ../../src/sass/all.sass */
 #point .modal-content .add, #point .modal-content .cut {
   width: 10vh;
   height: 10vh;
@@ -1920,51 +1926,51 @@ body {
   border: 5px solid black;
   font-size: 5vh;
 }
-/* line 386, ../../src/sass/all.sass */
+/* line 389, ../../src/sass/all.sass */
 #point .modal-content .cut {
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
-/* line 392, ../../src/sass/all.sass */
+/* line 395, ../../src/sass/all.sass */
 #menu .modal-content {
   background-color: #fce5cd;
   width: 45vw;
   height: 50vh;
 }
-/* line 396, ../../src/sass/all.sass */
+/* line 399, ../../src/sass/all.sass */
 #menu .modal-content .btn {
   width: 10vw;
   margin: 1.5vh;
 }
 
-/* line 400, ../../src/sass/all.sass */
+/* line 403, ../../src/sass/all.sass */
 .metal {
   color: white;
 }
 
-/* line 402, ../../src/sass/all.sass */
+/* line 405, ../../src/sass/all.sass */
 .wood {
   color: green;
 }
 
-/* line 404, ../../src/sass/all.sass */
+/* line 407, ../../src/sass/all.sass */
 .water {
   color: blue;
 }
 
-/* line 406, ../../src/sass/all.sass */
+/* line 409, ../../src/sass/all.sass */
 .fire {
   color: red;
 }
 
-/* line 408, ../../src/sass/all.sass */
+/* line 411, ../../src/sass/all.sass */
 .earth {
   color: yellow;
 }
 
-/* line 411, ../../src/sass/all.sass */
+/* line 414, ../../src/sass/all.sass */
 .for-null {
   background-color: transparent;
   width: 20vh;
@@ -1973,7 +1979,7 @@ body {
   border: 3px dashed black;
 }
 
-/* line 418, ../../src/sass/all.sass */
+/* line 421, ../../src/sass/all.sass */
 .popover-content {
   white-space: pre-wrap;
 }

@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
     <title>CFE scoreboard</title>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="stylesheet/all.css" rel="stylesheet" />
+    <link href="stylesheet/all.css" media="all" rel="stylesheet" />
   </head>
   <body>
     <div id="half_left">
@@ -15,12 +15,8 @@
           250
         </div>
         <div class="contain2">
-          <div class="sp bot left">
-            --
-          </div>
-          <div class="sp bot right">
-            --
-          </div>
+          <div class="sp bot left"></div>
+          <div class="sp bot right"></div>
           <div class="contain3">
             <div class="name" contenteditable="true">
               FallCloud
@@ -109,12 +105,8 @@
           250
         </div>
         <div class="contain2">
-          <div class="sp bot right">
-            --
-          </div>
-          <div class="sp bot left">
-            --
-          </div>
+          <div class="sp bot right"></div>
+          <div class="sp bot left"></div>
           <div class="contain3">
             <div class="name" contenteditable="true">
               彰化王
@@ -193,49 +185,49 @@
           </div>
         </div>
         <div class="row">
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             7
           </div>
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             8
           </div>
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             9
           </div>
-          <div class="btn btn-info">
+          <div class="btn btn-info op">
             +
           </div>
         </div>
         <div class="row">
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             4
           </div>
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             5
           </div>
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             6
           </div>
-          <div class="btn btn-info">
+          <div class="btn btn-info op">
             -
           </div>
         </div>
         <div class="row">
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             1
           </div>
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             2
           </div>
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             3
           </div>
-          <div class="btn btn-info">
+          <div class="btn btn-info op">
             *
           </div>
         </div>
         <div class="row">
-          <div class="btn btn-primary">
+          <div class="btn btn-primary num">
             0
           </div>
           <div class="btn btn-danger">
@@ -244,7 +236,7 @@
           <div class="btn btn-default">
             Del
           </div>
-          <div class="btn btn-info">
+          <div class="btn btn-info op">
             /
           </div>
         </div>
@@ -350,7 +342,7 @@
               </li>
             </ul>
           </div>
-          <div class="btn-group">
+          <div class="btn-group dropup">
             <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
               舊世代<span class="caret"></span>
             </div>
@@ -377,7 +369,7 @@
               </li>
             </ul>
           </div>
-          <div class="btn-group">
+          <div class="btn-group dropup">
             <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
               雙學派<span class="caret"></span>
             </div>
@@ -443,11 +435,58 @@
     </div>
     <div class="modal fade" id="menu">
       <div class="modal-content">
-        <div class="btn btn-primary">
+        <div class="btn btn-primary" id="initi">
           初始化
         </div>
-        <div class="btn btn-primary">
+        <div class="btn btn-primary" data-target="#setwindow" data-toggle="modal" id="setting">
           設定
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="setwindow" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div aria-hidden="true" class="btn close" data-dismiss="modal">
+              &times;
+            </div>
+            <h3 class="modal-title">
+              設定
+            </h3>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <label for="formhp">血量上限</label><input id="formhp" type="number" value="250" />
+            </div>
+            <div class="row">
+              <div class="checkbox col-xs-offset-3 col-xs-6">
+                <label><input checked="true" disabled="true" type="checkbox">操作完即關閉選單</input></label>
+              </div>
+              <div class="checkbox col-xs-offset-3 col-xs-6">
+                <label><input checked="true" disabled="true" type="checkbox">星辰規則</input></label>
+              </div>
+              <div class="checkbox col-xs-offset-3 col-xs-6">
+                <label><input checked="true" disabled="true" type="checkbox">環境規則</input></label>
+              </div>
+              <div class="checkbox col-xs-offset-3 col-xs-6">
+                <label><input checked="true" disabled="true" type="checkbox">職業規則</input></label>
+              </div>
+              <div class="checkbox col-xs-offset-3 col-xs-6">
+                <label><input checked="true" disabled="true" type="checkbox">暗黑規則</input></label>
+              </div>
+              <div class="checkbox col-xs-offset-3 col-xs-6">
+                <label><input checked="true" disabled="true" type="checkbox">精靈規則</input></label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="btn btn-default" data-dismiss="modal">
+              關閉
+            </div>
+            <div class="btn btn-primary" id="save_setting">
+              儲存
+            </div>
+          </div>
         </div>
       </div>
     </div>
