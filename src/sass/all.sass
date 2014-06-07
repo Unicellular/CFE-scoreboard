@@ -94,13 +94,15 @@ body
             height: 12%
             background-color: #ffe599
             font-size: 5vh
+            overflow: hidden
+            white-space: nowrap
             float: $main
             border: 3px solid black
             margin-top: -3px
           .info
             width: 50%
             height: 90%
-            padding: 3vh
+            padding: 3vh 1vh
             background-color: #fff2cc
             font-size: 6vh
             float: $main
@@ -109,7 +111,7 @@ body
             .profession
               cursor: pointer
               width: 100%
-              height: 8vh
+              margin-bottom: 2vh
               &:active
                 box-shadow: inset 0 3px 5px rgba(0,0,0,.125)
             .pet, .pet-num
@@ -136,24 +138,25 @@ body
             .meteor
               margin-top: 10vh
               & > div
-                width: 6vh
+                width: 7vh
                 display: inline-block
                 border: 1px dashed #000
                 cursor: pointer
+                padding-left: .5vh
                 div
                   opacity: 0.5
                 &.spawn
                   border: 1px solid #000
               .metal
-                +star(5vh, ghostwhite)
+                +star(6vh, ghostwhite)
               .wood
-                +star(5vh, green)
+                +star(6vh, green)
               .water
-                +star(5vh, blue)
+                +star(6vh, blue)
               .fire
-                +star(5vh, red)
+                +star(6vh, red)
               .earth
-                +star(5vh, yellow)
+                +star(6vh, yellow)
     .star
       width: 15vh
       height: 15vh

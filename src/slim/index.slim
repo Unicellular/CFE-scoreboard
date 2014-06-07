@@ -6,15 +6,15 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"
     title CFE scoreboard
     link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
-    link rel="stylesheet" href="stylesheet/all.css"
+    link rel="stylesheet" href="stylesheet/all.css" media="all"
 
   body
     #half_left
       .contain
         .hp.bot.left 250
         .contain2
-          .sp.bot.left --
-          .sp.bot.right --
+          .sp.bot.left
+          .sp.bot.right
           .contain3
             .name contenteditable="true" FallCloud
             .name contenteditable="true" Prof. X
@@ -66,8 +66,8 @@ html
       .contain
         .hp.bot.right 250
         .contain2
-          .sp.bot.right --
-          .sp.bot.left --
+          .sp.bot.right
+          .sp.bot.left
           .contain3
             .name contenteditable="true" 彰化王
             .name contenteditable="true" 幻影
@@ -113,25 +113,25 @@ html
           .btn.btn-primary.enter
             | =
         .row
-          .btn.btn-primary 7
-          .btn.btn-primary 8
-          .btn.btn-primary 9
-          .btn.btn-info +
+          .btn.btn-primary.num 7
+          .btn.btn-primary.num 8
+          .btn.btn-primary.num 9
+          .btn.btn-info.op +
         .row
-          .btn.btn-primary 4
-          .btn.btn-primary 5
-          .btn.btn-primary 6
-          .btn.btn-info -
+          .btn.btn-primary.num 4
+          .btn.btn-primary.num 5
+          .btn.btn-primary.num 6
+          .btn.btn-info.op -
         .row
-          .btn.btn-primary 1
-          .btn.btn-primary 2
-          .btn.btn-primary 3
-          .btn.btn-info *
+          .btn.btn-primary.num 1
+          .btn.btn-primary.num 2
+          .btn.btn-primary.num 3
+          .btn.btn-info.op *
         .row
-          .btn.btn-primary 0
+          .btn.btn-primary.num 0
           .btn.btn-danger C
           .btn.btn-default Del
-          .btn.btn-info
+          .btn.btn-info.op
             | /
     #select_career.modal.fade
       .modal-content
@@ -203,7 +203,7 @@ html
                 a href="#" 仙者
               li
                 a href="#" 聖者
-          .btn-group
+          .btn-group.dropup
             .btn.btn-primary.dropdown-toggle data-toggle="dropdown"
               | 舊世代
               span.caret
@@ -222,7 +222,7 @@ html
                 a href="#" 風水師
               li
                 a href="#" 龍脈使
-          .btn-group
+          .btn-group.dropup
             .btn.btn-primary.dropdown-toggle data-toggle="dropdown"
               | 雙學派
               span.caret
@@ -263,8 +263,42 @@ html
         .cut.btn.btn-warning -
     #menu.modal.fade
       .modal-content
-        .btn.btn-primary 初始化
-        .btn.btn-primary 設定
+        #initi.btn.btn-primary 初始化
+        #setting.btn.btn-primary data-toggle="modal" data-target="#setwindow" 設定
+
+    #setwindow.modal.fade role="dialog"
+      .modal-dialog
+        .modal-content
+          .modal-header
+            .btn.close data-dismiss="modal" aria-hidden="true" &times;
+            h3.modal-title 設定
+          .modal-body
+            .row
+              label for="formhp" 血量上限
+              input#formhp type="number" value="250"
+            .row
+              .checkbox.col-xs-offset-3.col-xs-6
+                label
+                  input type="checkbox" checked="true" disabled="true" 操作完即關閉選單
+              .checkbox.col-xs-offset-3.col-xs-6
+                label
+                  input type="checkbox" checked="true" disabled="true" 星辰規則
+              .checkbox.col-xs-offset-3.col-xs-6
+                label
+                  input type="checkbox" checked="true" disabled="true" 環境規則
+              .checkbox.col-xs-offset-3.col-xs-6
+                label
+                  input type="checkbox" checked="true" disabled="true" 職業規則
+              .checkbox.col-xs-offset-3.col-xs-6
+                label
+                  input type="checkbox" checked="true" disabled="true" 暗黑規則
+              .checkbox.col-xs-offset-3.col-xs-6
+                label
+                  input type="checkbox" checked="true" disabled="true" 精靈規則
+          .modal-footer
+            .btn.btn-default data-dismiss="modal" 關閉
+            .btn.btn-primary#save_setting 儲存
+
     script src="https://code.jquery.com/jquery-1.11.1.js"
     script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.js"
     script src="javascript/all.js"

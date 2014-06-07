@@ -19,8 +19,6 @@ j11.fn.position = ( ofobj, vertical ) ->
 
 # control function
 
-hp_point = [250, 250]
-sp_point = [0, 0, 0, 0]
 bane =
     'metal': 'wood'
     'wood': 'earth'
@@ -39,8 +37,6 @@ select_attr = j11 '#select_attr .modal-content'
 point = j11 '#point .modal-content'
 menu = j11 '#menu .modal-content'
 
-initialize = ->
-
 opposite = (child) ->
     if j11('#half_left').has(child).length then '#half_right' else '#half_left'
 
@@ -55,7 +51,8 @@ pop_widget = (wid) -> (e) ->
     self.css('z-index', 9999)
     modal.one 'show.bs.modal', ->
         if wid.is calcu
-            wid.removeClass('for-hp').removeClass 'for-sp'
+            wid.removeClass 'for-hp', 'for-sp'
+            output.text target.text()
             if self.hasClass 'hp'
                 wid.addClass 'for-hp'
             else if self.hasClass 'sp'
@@ -92,19 +89,69 @@ env = (j11 '#env').click pop_widget select_attr
 envtxt = (j11 '#envtxt').click pop_widget select_attr
 tools = (j11 '#tools').click pop_widget menu
 
+change_attr = (obj, attr) ->
+    obj.removeClass('metal wood water fire earth').addClass attr
+
+getCookie = (name) ->
+    document.cookie.match(name + '=\\w+')?[0].split('=')[1]
+
+initialize = ->
+    hp.text (getCookie 'hp_point') ? 250
+    sp.text ''
+    profession.text '無職業'
+    pet.children().attr class: ''
+    petnum.text ''
+    dark.text ''
+    star.children().attr class: ''
+    env.children().attr class: ''
+    change_attr(envtxt, '').text '無'
+    j11('.meteor .spawn').removeClass('spawn').children().fadeTo 'slow', 0.5
+
 spawnstar = (div, attr) ->
     if not div.hasClass attr
         op = j11(opposite(div) + ' .star div')
         opattr = op.attr 'class'
-        if bane[attr] == opattr
+        if bane[attr] is opattr
             op.attr class: ''
-        if attr isnt opattr
-            div.attr 'class', attr
+        if attr isnt opattr or not attr
+            div.attr class: attr
             true
         else
             false
     else
         false
+
+output = j11 '.output', calcu
+operator =
+    '+': (a, b) -> Number(a) + Number b
+    '-': (a, b) -> a - b
+    '*': (a, b) -> a * b
+    '/': (a, b) -> a // b
+    '**': (a, b) -> a ** b
+calculate = (s) ->
+    m = s.match(/\d+|[\+\*\/-]+/g) ? []
+    if m.length is 3
+        operator[m[1]] m[0], m[2]
+    else if s
+        Number s
+    else
+        ''
+
+(j11 '.num', calcu).click (e) -> output.append j11.trim e.target.textContent
+(j11 '.op', calcu).click (e) ->
+    result = calculate output.text()
+    unless isNaN result
+        output.text result + j11.trim e.target.textContent
+    else
+        output.append j11.trim e.target.textContent
+(j11 '.enter', calcu).click (e) ->
+    result = calculate output.text()
+    output.text result
+    target.text(result) unless isNaN result
+    calcu.parent().modal('hide')
+
+(j11 '.btn-danger', calcu).click (e) -> output.text target.text()
+(j11 '.btn-default', calcu).click (e) -> output.text output.text()[...-1]
 
 j11('.meteor > div').click ->
     self = j11(@)
@@ -117,17 +164,16 @@ select_attr.find('.btn').click (e) ->
     div = target.children()
     attr = (j11 e.target).attr 'data-attr'
     if target.hasClass 'star'
-        spawnstar div
+        spawnstar div, attr
     else
-        div.attr 'class', attr
+        div.attr class: attr
     if target.hasClass 'pet'
         if attr
             target.next().text 2
         else
             target.next().text ''
     else if target.hasClass 'env'
-        envtxt.attr class: attr
-        envtxt.text translate[attr] ? '無'
+        change_attr(envtxt, attr).text translate[attr] ? '無'
 
 select_career.find('a').click (e) ->
     e.preventDefault()
@@ -147,7 +193,17 @@ select_career.find('a').click (e) ->
     else
         target.text ''
     if not target.text() and target.hasClass 'pet-num'
-        target.prev().children().attr 'class', ''
+        target.prev().children().attr class: ''
+
+(j11 '#initi').click initialize
+(j11 '#save_setting').click ->
+    v = (j11 '#formhp').val()
+    document.cookie = 'hp_point=' + v unless isNaN Number v
+    (j11 '#setwindow').modal('hide')
+
+# prevent bootstrap modal from steal focus.
+(j11 '#setwindow *').bind 'click mouseup mousedown keypress keydown keyup', (e) ->
+    e.stopPropagation() if e.which isnt 27 and not (j11 e.target).hasClass 'btn'
 
 # appearance adjustment
 
@@ -155,9 +211,9 @@ tools.popover content: '''Please turn to landscape mode!
 請將螢幕橫置瀏覽！'''
 detectPortrait = ->
     if innerWidth < innerHeight
-        tools.popover('show')
+        tools.popover 'show'
     else
-        tools.popover('hide')
+        tools.popover 'hide'
 j11(window).resize detectPortrait
 detectPortrait()
 
